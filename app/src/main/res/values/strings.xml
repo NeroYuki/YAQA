@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">YAQA</string>
+    <string name="nav_questions_title">Questions</string>
+    <string name="nav_gamerules_title">Gamerules</string>
+    <string name="nav_play_title">Play</string>
+    <string name="nav_multiplayer_title">Multiplayer</string>
+    <string name="nav_settings_title">Settings</string>
+    <string name="questions_test_string">Questions test string</string>
+    <string name="gamerules_test_string">Gamerules test string</string>
+    <string name="play_test_string">Play test string</string>
+    <string name="multiplayer_test_string">Multiplayer test string</string>
+    <string name="settings_test_string">Setting test string</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_test">Button</string>
+</resources>

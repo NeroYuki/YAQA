@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/nav_questions_title" android:icon="@drawable/ic_library_books_black_24dp"
+          android:id="@+id/nav_questions"/>
+
+    <item android:title="@string/nav_gamerules_title" android:icon="@drawable/ic_games_black_24dp"
+          android:id="@+id/nav_gamerules"/>
+
+    <item android:title="@string/nav_play_title" android:icon="@drawable/ic_play_arrow_black_24dp"
+          android:id="@+id/nav_play"/>
+
+    <item android:title="@string/nav_multiplayer_title" android:icon="@drawable/ic_people_black_24dp"
+          android:id="@+id/nav_multiplayer"/>
+
+    <item android:title="@string/nav_settings_title" android:icon="@drawable/ic_settings_black_24dp"
+          android:id="@+id/nav_setting"/>
+</menu>
