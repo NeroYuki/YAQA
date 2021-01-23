@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference
-            android:defaultValue="false"
-            android:title="Check box preference" android:key="check_box_preference_1"/>
+    <EditTextPreference
+            android:defaultValue="Guest"
+            android:title="Change Username" android:key="username"
+            android:icon="@drawable/ic_player_placeholder_icon"/>
+    <Preference
+            android:title="Scan for Question Sets"  android:key="scan"
+            android:icon="@drawable/ic_scan_dark"/>
+    <Preference
+            android:title="Reset Local Result" android:key="wipe_result"
+            android:icon="@drawable/ic_paper_dark"/>
 </PreferenceScreen>

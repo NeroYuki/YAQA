@@ -1,0 +1,38 @@
+{
+  "uuid": "00000000-0000-0000-0000-000000000001",
+  "name": "Example Set",
+  "desc": "This is an example set",
+  "author": "Ngoc Dang",
+  "number": 4,
+  "file_path": "/Example_set/",
+  "questions": [
+    {
+      "question_string": "What is Vietnam's capital",
+      "correct_answer": "Ha Noi",
+      "difficulty": 1,
+      "wrong_answers": ["Ho Chi Minh City", "Da Nang", "Beijing"],
+      "image_url": "null"
+    },
+    {
+      "question_string": "What is the United State's capital",
+      "correct_answer": "Washington D.C",
+      "difficulty": 2,
+      "wrong_answers": ["Chicago", "New York", "Los Angeles"],
+      "image_url": "null"
+    },
+    {
+      "question_string": "What is China's capital",
+      "correct_answer": "Beijing",
+      "difficulty": 1,
+      "wrong_answers": ["Shanghai", "Guang Zhou", "Wuhan"],
+      "image_url": "null"
+    },
+    {
+      "question_string": "What is Australia's capital",
+      "correct_answer": "Canberra",
+      "difficulty": 3,
+      "wrong_answers": ["Sydney", "Perth", "Melbourne"],
+      "image_url": "null"
+    }
+  ]
+}

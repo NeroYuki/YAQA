@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                           xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/drawer_layout"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           >
+
+    <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/question_fragment_container"
+            android:background="@drawable/ic_background"
+            android:backgroundTint="@color/design_default_color_primary" android:backgroundTintMode="multiply">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="290dp" app:srcCompat="@drawable/ic_alert_icon"
+                android:id="@+id/imageView5" android:rotation="15" android:layout_gravity="center"
+                android:paddingBottom="160dp"/>
+        <TextView
+                android:text="@string/no_quesion_selected_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView14" android:layout_gravity="center"
+                android:layout_margin="16dp" android:textSize="18sp" android:textAlignment="center"/>
+    </FrameLayout>
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/questions_nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/question_navigation"
+            app:headerLayout="@layout/question_nav_header"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

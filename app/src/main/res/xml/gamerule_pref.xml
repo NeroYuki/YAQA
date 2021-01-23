@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="@string/nav_gamerules_title" android:layout_gravity="clip_horizontal|center">
+
+    </PreferenceCategory>
+    <EditTextPreference
+            android:defaultValue="5"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Max number of questions" android:key="max_question_count"
+            android:icon="@drawable/ic_paper_dark"
+    />
+    <MultiSelectListPreference
+            android:title="Selected Question Sets" android:defaultValue="@array/placeholder_set"
+            android:entries="@array/placeholder_set" android:entryValues="@array/placeholder_set"
+            android:key="selected_sets"
+            android:icon="@drawable/ic_collection_dark"
+            />
+
+    <EditTextPreference
+            android:defaultValue="3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Number of lives" android:key="lives_count"
+            android:summary="Decide how many question you can answer wrong before game over"
+            android:icon="@drawable/ic_heart_dark"
+    />
+
+    <EditTextPreference
+            android:defaultValue="01:00"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Time Limit" android:key="time_limit"
+            android:summary="Limit on how much time you have before game over"
+            android:icon="@drawable/ic_timer_dark"
+    />
+</PreferenceScreen>

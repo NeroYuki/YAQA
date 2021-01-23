@@ -21,6 +21,17 @@ public class QuestionsFragment extends Fragment {
     private RecyclerView recyclerView;
     private QuestionSetAdapter adapter;
     private ArrayList<QuestionSet> questionSetList;
+
+    public QuestionsFragment() {
+        questionSetList = new ArrayList<>();
+    }
+
+    public QuestionsFragment(ArrayList<QuestionSet> entry) {
+        questionSetList = new ArrayList<>();
+        for (QuestionSet element : entry) {
+            questionSetList.add(element);
+        }
+    }
     
     @Nullable
     @Override
@@ -37,32 +48,19 @@ public class QuestionsFragment extends Fragment {
     private void initView() {
         recyclerView = (RecyclerView) getView().findViewById(R.id.question_list_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        questionSetList = new ArrayList<>();
         adapter = new QuestionSetAdapter(getActivity(), questionSetList);
         recyclerView.setAdapter(adapter);
         // recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         createListData();
+
+
     }
 
     private void createListData() {
-        QuestionSet questionSetEntry = new QuestionSet("Earth", "a", 10, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Jupiter", "b", 26, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Mars", "c", 4, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Pluto", "d", 1, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Venus", "e", 9, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Saturn", "f", 11, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Mercury", "g", 4, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Neptune", "h", 12, "me");
-        questionSetList.add(questionSetEntry);
-        questionSetEntry = new QuestionSet("Uranus", "i", 9, "me");
-        questionSetList.add(questionSetEntry);
+        if (questionSetList.size() == 0) {
+            QuestionSet questionSetEntry = new QuestionSet("", "Example Set", "This is an example set", 4, "Guest");
+            questionSetList.add(questionSetEntry);
+        }
         adapter.notifyDataSetChanged();
     }
 }
