@@ -88,6 +88,9 @@ public class EditQuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_drawable_small);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("YAQA - Question Editor");
         editingSet.author = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("username", "Unknown");
         final String editTarget = this.getIntent().getStringExtra("editTarget");
         try {

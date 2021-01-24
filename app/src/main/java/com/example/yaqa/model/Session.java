@@ -1,9 +1,6 @@
 package com.example.yaqa.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Session {
     private Player player;
@@ -15,6 +12,7 @@ public class Session {
     public boolean isMultiplayer = false;
     private int remainingLife = 1;
     private Map<Player, Result> multiplayerResult = null;
+    private int questionCount = 0;
 
     public Session() {
 
@@ -66,7 +64,9 @@ public class Session {
     }
 
     public int getQuestion_count() {
-        return questionList.size();
+        if (questionCount == 0)
+            return questionList.size();
+        return questionCount;
     }
 
     public int getRemainingLife() {
@@ -75,5 +75,13 @@ public class Session {
 
     public void setRemainingLife(int remainingLife) {
         this.remainingLife = remainingLife;
+    }
+
+    public void shuffleQuestion() {
+        Collections.shuffle(questionList);
+    }
+
+    public void setQuestion_count(int min) {
+        this.questionCount = min;
     }
 }

@@ -11,4 +11,9 @@
     <Preference
             android:title="Reset Local Result" android:key="wipe_result"
             android:icon="@drawable/ic_paper_dark"/>
+    <Preference
+            android:title="About" android:key="about"
+            android:summary="About the development team"
+            android:icon="@drawable/ic_info_dark"
+        />
 </PreferenceScreen>

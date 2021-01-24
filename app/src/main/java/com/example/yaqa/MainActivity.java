@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity implements MessageReceiver {
         setupWifiDirect();
 
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_drawable_small);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Waiting for host player to start the game");
         readyPrompt = builder.create();
@@ -362,6 +365,11 @@ public class MainActivity extends AppCompatActivity implements MessageReceiver {
 
         if (key.equals("username")) {
             Config.currentPlayerRoom.add(new Player(value, "", "Not Ready", null));
+            if (selectedFragment instanceof MultiplayerFragment) {
+                ((MultiplayerFragment) selectedFragment).notifyConnectionChange();
+            }
+        }
+        if (key.equals("Socket") && value.equals("Disconnected")) {
             if (selectedFragment instanceof MultiplayerFragment) {
                 ((MultiplayerFragment) selectedFragment).notifyConnectionChange();
             }

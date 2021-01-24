@@ -6,4 +6,6 @@
     <color name="colorTextOnBG">#FFFFFF</color>
     <color name="colorTextOnButton">#000000</color>
     <color name="colorTextOnBGGrey">#AAAAAA</color>
+    <color name="allowColor">#22AA22</color>
+    <color name="disallowColor">#AA2222</color>
 </resources>

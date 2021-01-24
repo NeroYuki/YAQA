@@ -74,5 +74,18 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 return true;
             }
         });
+
+        Preference aboutBtn = (Preference) getPreferenceScreen().findPreference("about");
+        aboutBtn.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), android.R.style.Theme_Material_Dialog_Alert);
+                builder.setTitle("About").setMessage("SE114.L11 Project, Made by:\nNguyen Ngoc Dang - 18520557\nHa Minh Hieu - 18520736");
+                AlertDialog dialog = builder.create();
+                dialog.setInverseBackgroundForced(true);
+                dialog.show();
+                return true;
+            }
+        });
     }
 }

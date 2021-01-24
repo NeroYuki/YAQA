@@ -36,4 +36,11 @@
             android:summary="Limit on how much time you have before game over"
             android:icon="@drawable/ic_timer_dark"
     />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="Shuffle Questions" android:key="allow_shuffle"
+        android:summary="Allow questions list to be shuffled"
+        android:icon="@drawable/ic_shuffle_dark"
+    />
 </PreferenceScreen>

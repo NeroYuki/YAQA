@@ -4,10 +4,11 @@
                                    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                    android:layout_height="wrap_content" app:cardElevation="6dp"
                                    app:cardBackgroundColor="@color/design_default_color_background"
-                                   app:cardUseCompatPadding="true">
+                                   app:cardUseCompatPadding="true" app:cardCornerRadius="10dp">
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="86dp" android:background="#6464EE">
+            android:layout_height="86dp"
+            android:background="@color/colorPrimary">
         <ImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp" app:srcCompat="@drawable/ic_player_placeholder_icon"

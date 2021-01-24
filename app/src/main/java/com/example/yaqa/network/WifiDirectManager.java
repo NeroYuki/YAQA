@@ -62,6 +62,7 @@ public class WifiDirectManager {
 
         //TODO: disable existing connection
         GeneralSocketManager.disposeCommunicationSocket();
+        MessageBroadcaster.onReceive("Socket", "Disconnected");
     }
 
     public static final WifiP2pManager.PeerListListener peerListListener = new WifiP2pManager.PeerListListener() {

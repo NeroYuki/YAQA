@@ -9,9 +9,11 @@ import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.*;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
@@ -33,6 +35,8 @@ public class MultiplayerFragment extends Fragment{
     private ArrayList<Player> roomPlayerList;
     private PlayerAdapter discoverAdapter;
     private ArrayList<Player> discoverPlayerList;
+    private CardView statusView;
+    private TextView statusTextView;
 
     @Nullable
     @Override
@@ -58,7 +62,8 @@ public class MultiplayerFragment extends Fragment{
         discoverPlayerList = new ArrayList<>();
         discoverAdapter = new PlayerAdapter(getActivity(), discoverPlayerList);
         discoverRecyclerView.setAdapter(discoverAdapter);
-
+        statusTextView = getView().findViewById(R.id.textView19);
+        statusView = getView().findViewById(R.id.statusView);
 
         // recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         createListData();
@@ -72,6 +77,14 @@ public class MultiplayerFragment extends Fragment{
             roomPlayerList.add(Config.currentPlayerRoom.get(i));
         }
         roomAdapter.notifyDataSetChanged();
+        if (Config.isMultiplayerSession) {
+            statusView.setCardBackgroundColor(getResources().getColor(R.color.allowColor));
+            statusTextView.setText("Multiplayer is now available");
+        }
+        else {
+            statusView.setCardBackgroundColor(getResources().getColor(R.color.disallowColor));
+            statusTextView.setText("Multiplayer is currently not available");
+        }
         //discoverAdapter.notifyDataSetChanged();
     }
 
@@ -81,6 +94,14 @@ public class MultiplayerFragment extends Fragment{
         roomPlayerList.add(entry);
         for (int i = 0; i < Config.currentPlayerRoom.size(); i++) {
             roomPlayerList.add(Config.currentPlayerRoom.get(i));
+        }
+        if (Config.isMultiplayerSession) {
+            statusView.setCardBackgroundColor(getResources().getColor(R.color.allowColor));
+            statusTextView.setText("Multiplayer is now available");
+        }
+        else {
+            statusView.setCardBackgroundColor(getResources().getColor(R.color.disallowColor));
+            statusTextView.setText("Multiplayer is currently not available");
         }
     }
 

@@ -96,7 +96,11 @@ public class QuestionSlidePagerActivity extends FragmentActivity implements Mess
         currentSession = new Session();
         currentSession.setRemainingLife(Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("lives_count", "1")));
         timeLimit = UtilsHelper.parseTime(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("time_limit", "01:00")) * 1000;
+        int questionLimit = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("max_question_count", "10"));
+        boolean allowShuffle = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("allow_shuffle", false);
+
         Set<String> selectedSetUUID = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getStringSet("selected_sets", null);
+
         if (this.getIntent().getBooleanExtra("com.example.yaqa.isMultiplayer", false)) {
             currentSession.initializeMultiplayerSession(Config.currentPlayerRoom);
             Config.currentResult.clear();
@@ -111,6 +115,8 @@ public class QuestionSlidePagerActivity extends FragmentActivity implements Mess
                 QuestionSet entry_metadata = QuestionSetMetadataDatabase.getQuestionSetByUUID(uuid);
                 QuestionSet entry = JSONDataHelper.questionParsing(FileHelper.readFromFile(Config.getCorePath() + entry_metadata.file_path + "data.json"));
                 currentSession.addAllQuestion(entry.questions);
+                currentSession.shuffleQuestion();
+                currentSession.setQuestion_count(Math.min(currentSession.getQuestion_count(), questionLimit));
             }
             num_page = currentSession.getQuestion_count();
         }

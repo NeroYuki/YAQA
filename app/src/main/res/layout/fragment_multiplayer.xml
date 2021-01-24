@@ -88,7 +88,8 @@
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@+id/guideline14"
             app:layout_constraintBottom_toTopOf="@+id/guideline15" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:cardBackgroundColor="@color/design_default_color_error">
+            app:layout_constraintStart_toStartOf="parent" app:cardBackgroundColor="@color/disallowColor"
+            android:id="@+id/statusView">
         <TextView
                 android:text="Multiplayer is currently not available"
                 android:layout_width="wrap_content"
